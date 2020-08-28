@@ -21,6 +21,9 @@
     <ClCompile Include="SampleCapture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MonitorList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SimpleCapture.h">
@@ -42,6 +45,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="SavePic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitorList.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

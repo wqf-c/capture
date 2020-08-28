@@ -2,6 +2,7 @@
 #include<iostream>
 #include"SimpleCapture.h"
 #include"pch.h"
+#include"MonitorList.h"
 
 using namespace std;
 using namespace winrt;
@@ -63,19 +64,22 @@ int main()
 	{
 		cout << "queue try enqueue success" << endl;
 	});
+	std::unique_ptr<MonitorList> m_monitors;
+	m_monitors = std::make_unique<MonitorList>(true);
 	WINRT_VERIFY(success);
 	HWND hwnd;
 	getWindows(hwnd);
 	auto d3dDevice = CreateD3DDevice();
 	auto dxgiDevice = d3dDevice.as<IDXGIDevice>();
 	auto m_device = CreateDirect3DDevice(dxgiDevice.get());
-	auto item = CreateCaptureItemForWindow(hwnd);
+	//auto item = CreateCaptureItemForWindow(hwnd);
+	auto item = CreateCaptureItemForMonitor(m_monitors->getMonitors()[0].MonitorHandle);
 	auto m_capture = std::make_unique<SimpleCapture>(m_device, item);
 	m_capture->StartCapture();
 	MSG msg;
 	while (GetMessage(&msg, NULL, 0, 0))
 	{
-		Sleep(500);
+		Sleep(1000);
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 	}

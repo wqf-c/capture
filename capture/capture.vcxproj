@@ -127,6 +127,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MonitorList.cpp" />
     <ClCompile Include="SampleCapture.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -134,6 +135,7 @@
     <ClInclude Include="composition.interop.h" />
     <ClInclude Include="d3dHelpers.h" />
     <ClInclude Include="direct3d11.interop.h" />
+    <ClInclude Include="MonitorList.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SavePic.h" />
     <ClInclude Include="SimpleCapture.h" />

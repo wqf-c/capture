@@ -50,7 +50,7 @@ SimpleCapture::SimpleCapture(
 		2);*/
 
 	// Create framepool, define pixel format (DXGI_FORMAT_B8G8R8A8_UNORM), and frame size. 
-	m_framePool = Direct3D11CaptureFramePool::Create(
+	m_framePool = Direct3D11CaptureFramePool::CreateFreeThreaded(
 		m_device,
 		DirectXPixelFormat::B8G8R8A8UIntNormalized,
 		2,
@@ -98,7 +98,8 @@ void SimpleCapture::OnFrameArrived(
 	Direct3D11CaptureFramePool const& sender,
 	winrt::Windows::Foundation::IInspectable const&)
 {
-
+	printf("get frame\n");
+	Sleep(1000);
 	auto newSize = false;
 
 	{
